@@ -35,6 +35,10 @@ public class Usuario implements Serializable {
 	@OneToOne
 	@JoinColumn
 	private Carteira carteira;
+	
+	@OneToOne
+	@JoinColumn
+	private Promocao promocao;
 
 	public Long getId() {
 		return id;
@@ -76,6 +80,14 @@ public class Usuario implements Serializable {
 		this.carteira = carteira;
 	}
 
+	public Promocao getPromocao() {
+		return promocao;
+	}
+
+	public void setPromocao(Promocao promocao) {
+		this.promocao = promocao;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -104,6 +116,6 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", compra=" + compra + ", carteira="
-				+ carteira + "]";
+				+ carteira + ", promocao=" + promocao + "]";
 	}	
 }

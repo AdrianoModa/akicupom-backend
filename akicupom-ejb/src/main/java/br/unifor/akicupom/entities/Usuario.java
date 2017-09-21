@@ -37,7 +37,7 @@ public class Usuario implements Serializable {
 	private Carteira carteira;
 	
 	@OneToOne
-	@JoinColumn
+	@JoinColumn(name="PROMO_USER_ID")
 	private Promocao promocao;
 
 	public Long getId() {

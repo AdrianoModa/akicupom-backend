@@ -7,14 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="promocao")
 public class Promocao implements Serializable {
 
-	private static final long serialVersionUID = -461880334586264909L;
+	private static final long serialVersionUID = -2634152080046089764L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -32,7 +32,7 @@ public class Promocao implements Serializable {
 	@Column
 	private String capa;
 	
-	@OneToOne(mappedBy="promocao")
+	@ManyToOne
 	private Usuario usuario;
 
 	public Long getId() {
@@ -75,6 +75,14 @@ public class Promocao implements Serializable {
 		this.capa = capa;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -103,6 +111,6 @@ public class Promocao implements Serializable {
 	@Override
 	public String toString() {
 		return "Promocao [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", dataValidade=" + dataValidade
-				+ ", capa=" + capa + "]";
+				+ ", capa=" + capa + ", usuario=" + usuario + "]";
 	}
 }

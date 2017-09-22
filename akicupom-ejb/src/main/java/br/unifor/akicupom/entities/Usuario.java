@@ -36,9 +36,8 @@ public class Usuario implements Serializable {
 	@JoinColumn
 	private Carteira carteira;
 	
-	@OneToOne
-	@JoinColumn(name="PROMO_USER_ID")
-	private Promocao promocao;
+	@OneToMany(mappedBy="usuario")
+	private Collection<Promocao> promocao;
 
 	public Long getId() {
 		return id;
@@ -80,11 +79,11 @@ public class Usuario implements Serializable {
 		this.carteira = carteira;
 	}
 
-	public Promocao getPromocao() {
+	public Collection<Promocao> getPromocao() {
 		return promocao;
 	}
 
-	public void setPromocao(Promocao promocao) {
+	public void setPromocao(Collection<Promocao> promocao) {
 		this.promocao = promocao;
 	}
 
@@ -117,5 +116,5 @@ public class Usuario implements Serializable {
 	public String toString() {
 		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", compra=" + compra + ", carteira="
 				+ carteira + ", promocao=" + promocao + "]";
-	}	
+	}
 }

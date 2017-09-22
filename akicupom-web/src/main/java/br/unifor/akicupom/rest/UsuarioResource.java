@@ -20,7 +20,7 @@ import br.unifor.akicupom.BO.UsuarioBO;
 import br.unifor.akicupom.entities.Usuario;
 
 @RequestScoped
-@Path("/akicupom/usuario")
+@Path("akicupom/usuario")
 public class UsuarioResource {
 
 	@Inject

@@ -20,7 +20,7 @@ import br.unifor.akicupom.BO.PromocaoBO;
 import br.unifor.akicupom.entities.Promocao;
 
 @RequestScoped
-@Path("/akicupom/promocao")
+@Path("akicupom/promocao")
 public class PromocaoResource {
 
 	@Inject

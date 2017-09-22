@@ -27,7 +27,7 @@ public class PromocaoResource {
 	private PromocaoBO promocaoBO;
 
 	@GET
-	@Path("/listar")
+	@Path("/listarPromocoes")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response listarPromocoes(){
 		Collection<Promocao> promocao = promocaoBO.verTodasPromocoes();
